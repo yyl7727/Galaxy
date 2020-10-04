@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxy.galaxy.Mapper">
+    <sql id="baseCloumn" >
+        uuid,username,password,email,status,type
+    </sql>
+
+    <select id="findUserByUsername" parameterType="java.lang.String">
+        select 
+        <include refid="baseCloumn"/>
+        from sys_user
+        where username = #{username}
+    </select>
+</mapper>
