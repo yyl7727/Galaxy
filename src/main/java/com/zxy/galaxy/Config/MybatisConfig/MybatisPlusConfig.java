@@ -1,4 +1,4 @@
-package com.zxy.galaxy.Config;
+package com.zxy.galaxy.Config.MybatisConfig;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;

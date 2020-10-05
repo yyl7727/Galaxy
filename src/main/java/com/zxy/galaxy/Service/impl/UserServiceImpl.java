@@ -12,8 +12,23 @@ public class UserServiceImpl implements UserService {
     @Resource
     UserMapper userMapper;
 
+    /**
+     * 根据用户名找到对应用户
+     * @param username 用户名
+     * @return
+     */
     @Override
     public User findUserByUsername(String username) {
         return userMapper.findUserByUsername(username);
+    }
+
+    /**
+     * 添加用户
+     * @param user 用户实体
+     * @return
+     */
+    @Override
+    public int addUser(User user) {
+        return userMapper.addUser(user);
     }
 }
