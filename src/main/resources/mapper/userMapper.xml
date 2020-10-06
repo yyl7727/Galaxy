@@ -7,6 +7,13 @@
         uuid,username,password,email,status,type
     </sql>
 
+    <select id="findAllUser" resultType="User">
+        select
+        <include refid="baseCloumn"/>
+        from sys_user
+        where status = 0
+    </select>
+
     <select id="findUserByUsername" parameterType="java.lang.String" resultType="User">
         select 
         <include refid="baseCloumn"/>

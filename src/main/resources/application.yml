@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   datasource:
@@ -24,3 +24,7 @@ galaxy:
     secretKey: f4e2e52034348f86b67cde581c0f9eb5
     expire: 600
     header: token
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false

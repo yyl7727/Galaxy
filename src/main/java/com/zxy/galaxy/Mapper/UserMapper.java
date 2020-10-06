@@ -2,7 +2,15 @@ package com.zxy.galaxy.Mapper;
 
 import com.zxy.galaxy.Entity.User;
 
+import java.util.List;
+
 public interface UserMapper {
+    /**
+     * 获取所有用户信息
+     * @return
+     */
+    List<User> findAllUser();
+
     /**
      * 根据用户名找到对应用户
      * @param username 用户名

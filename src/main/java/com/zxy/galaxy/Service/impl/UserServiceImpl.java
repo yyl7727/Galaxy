@@ -6,11 +6,21 @@ import com.zxy.galaxy.Service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Resource
     UserMapper userMapper;
+
+    /**
+     * 获取所有用户信息
+     * @return
+     */
+    @Override
+    public List<User> findAllUser() {
+        return null;
+    }
 
     /**
      * 根据用户名找到对应用户
