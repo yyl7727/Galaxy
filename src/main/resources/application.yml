@@ -7,24 +7,3 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/galaxy?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8
     username: root
     password: 123456
-
-shiro-redis:
-  enable: true
-  redis-manager:
-    host: 127.0.0.1:6379
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath*:/mapper/**Mapper.xml
-  type-aliases-package: com.zxy.galaxy.Entity
-
-galaxy:
-  jwt:
-    secretKey: f4e2e52034348f86b67cde581c0f9eb5
-    expire: 600
-    header: token
-
-pagehelper:
-  helper-dialect: mysql
-  reasonable: false
