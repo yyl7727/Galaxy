@@ -27,6 +27,10 @@ public class User implements Serializable {
      */
     private String password;
     /**
+     * 盐值
+     */
+    private String salt;
+    /**
      * 真实姓名
      */
     private String realName;
@@ -42,10 +46,6 @@ public class User implements Serializable {
      * 邮箱
      */
     private String eMail;
-    /**
-     * 头像地址
-     */
-    private String avatar;
     /**
      * 状态
      */
@@ -66,4 +66,8 @@ public class User implements Serializable {
      * 更新时间
      */
     private Date updateTime;
+    /**
+     * 最后登录时间
+     */
+    private Date lastTime;
 }

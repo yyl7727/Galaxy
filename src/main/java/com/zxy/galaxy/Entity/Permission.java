@@ -2,14 +2,13 @@ package com.zxy.galaxy.Entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 菜单实体类
+ * 权限实体类
  */
 @Data
-public class Menu implements Serializable {
+public class Permission {
     /**
      * uuid
      */
@@ -19,33 +18,25 @@ public class Menu implements Serializable {
      */
     private String parentId;
     /**
-     * 菜单名称
+     * 权限编码
      */
-    private String menuName;
+    private String permCode;
     /**
-     * 菜单地址
+     * 权限名称
      */
-    private String url;
+    private String permName;
     /**
-     * 权限
+     * 排序
      */
-    private String permission;
+    private String sort;
     /**
-     * 类型
+     * 权限描述
      */
-    private String type;
-    /**
-     * 图标
-     */
-    private String icon;
+    private String description;
     /**
      * 状态
      */
     private String status;
-    /**
-     * 排序
-     */
-    private Integer sort;
     /**
      * 创建人
      */
@@ -58,4 +49,8 @@ public class Menu implements Serializable {
      * 更新时间
      */
     private Date updateTime;
+    /**
+     * 是否删除 0：未删除 1：已删除
+     */
+    private Date isDeleted;
 }

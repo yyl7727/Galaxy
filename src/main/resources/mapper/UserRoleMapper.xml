@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zxy.galaxy.Mapper.UserRoleMapper">
+    <select id="selectRolesByUserName" parameterType="String" resultType="String">
+        select t.roleid from sys_user_role t
+        where t.userid = #{userId}
+    </select>
+</mapper>

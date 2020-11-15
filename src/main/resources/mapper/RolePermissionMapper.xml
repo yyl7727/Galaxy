@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zxy.galaxy.Mapper.RolePermissionMapper">
+    <select id="selectPermsByRoles" resultType="String">
+        select permcode from sys_role_permission where roleid in
+        <foreach collection="list" open="(" close=")" separator="," item="roleId">
+            #{roleId}
+        </foreach>
+    </select>
+</mapper>

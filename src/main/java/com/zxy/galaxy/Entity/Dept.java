@@ -29,11 +29,15 @@ public class Dept implements Serializable {
     /**
      * 排序
      */
-    private String sort;
+    private Integer sort;
     /**
      * 状态
      */
     private String status;
+    /**
+     * 是否删除 0：未删除 1：已删除
+     */
+    private String isDeleted;
     /**
      * 创建人
      */
