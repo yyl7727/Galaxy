@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     sucess
+    欢迎<shiro:principal property="username"/>
+
+
     <a th:href="@{/logout}">退出</a>
-    <a th:href="@{/admin}">admin</a>
+    <a th:href="@{/user/list}" data-shiro-hasPermission="user:list">查询</a>
+    <a th:href="@{/user/insert}" data-shiro-hasPermission="user:list">插入</a>
+    <a th:href="@{/user/delete}" data-shiro-hasPermission="user:list">删除</a>
 </body>
 </html>

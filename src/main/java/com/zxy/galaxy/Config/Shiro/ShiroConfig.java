@@ -47,7 +47,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
-        Map resourcesMap = new LinkedHashMap<>();
+        Map<String, String> resourcesMap = new LinkedHashMap<>();
         resourcesMap.put("/login","anon");
         resourcesMap.put("/subLogin","anon");
         resourcesMap.put("/css/**","anon");
