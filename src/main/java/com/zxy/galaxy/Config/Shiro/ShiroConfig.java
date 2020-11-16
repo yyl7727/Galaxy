@@ -1,5 +1,6 @@
 package com.zxy.galaxy.Config.Shiro;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -71,5 +72,11 @@ public class ShiroConfig {
         credentialsMatcher.setHashAlgorithmName("md5");
         credentialsMatcher.setHashIterations(1024);
         return credentialsMatcher;
+    }
+
+    @Bean
+    public ShiroDialect shiroDialect() {
+        ShiroDialect shiroDialect = new ShiroDialect();
+        return shiroDialect;
     }
 }
