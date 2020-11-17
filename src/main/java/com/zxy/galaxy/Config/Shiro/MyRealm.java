@@ -39,7 +39,7 @@ public class MyRealm extends AuthorizingRealm {
         List<String> roleIds = userRoleMapper.selectRolesByUserName(user.getUuid());
         List<String> roles = roleMapper.selectRolesByRoleIds(roleIds);
         //根据用户角色获取角色对应权限
-        List<String> permissions = rolePermissionMapper.selectPermsByRoles(roles);
+        List<String> permissions = rolePermissionMapper.selectPermsByRoles(roleIds);
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.addRoles(roles);
         authorizationInfo.addStringPermissions(permissions);
@@ -56,7 +56,7 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String userName = (String) authenticationToken.getPrincipal();
         User user = userMapper.findUserByUsername(userName);
-        if (user == null){
+        if (user == null) {
             throw new UnknownAccountException("账号不存在");
         }
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, user.getPassword(), super.getName());

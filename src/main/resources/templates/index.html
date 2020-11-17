@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     sucess
-    <a th:href="@{/logout}">退出</a><br/>
-    <a th:href="@{/admin}">admin</a><br/>
-    <a th:href="@{/user/delete}" data-shiro-hasPermission="user:delete">删除</a>
+    <a th:href="@{/logout}">退出</a>
+    <a th:href="@{/admin}">admin</a>
 </body>
 </html>
