@@ -22,11 +22,14 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping("/subLogin")
-    public String login(User user) {
+    public String login(User user, boolean rememberMe) {
         Subject subject = SecurityUtils.getSubject();
         if (!subject.isAuthenticated()) {
             UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
             try {
+                if (rememberMe) {
+                    token.setRememberMe(true);
+                }
                 subject.login(token);//认证
             } catch (UnknownAccountException unknownAccountException) {
                 throw new LoginException("账号不存在", unknownAccountException);
